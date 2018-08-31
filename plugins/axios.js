@@ -10,9 +10,9 @@ import { Message } from 'iview'
 const env = process.env.NODE_ENV || 'development'
 
 let baseUrl = {
-  development: 'https://dev.domain.com',
-  test: 'https://test.domain.com',
-  production: 'https://pro.domain.com'
+  development: 'http://localhost:8808',
+  test: 'http://localhost:8808',
+  production: 'http://www.dashuntech.com:8808'
 }
 
 // axios 配置

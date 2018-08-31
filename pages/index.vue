@@ -1,53 +1,3 @@
-<style lang="less">
-.user-infor{
-    height: 135px;
-}
-.avator-img{
-    display: block;
-    width: 80%;
-    max-width: 100px;
-    height: auto;
-}
-.card-user-infor-name{
-    font-size: 2em;
-    color: #2d8cf0;
-}
-.card-title{
-    color: #abafbd;
-}
-.made-child-con-middle{
-    height: 100%;
-}
-.to-do-list-con{
-    height: 145px;
-    overflow: auto;
-}
-.to-do-item{
-    padding: 2px;
-}
-.infor-card-con{
-    height: 100px;
-}
-.infor-card-icon-con{
-    height: 100%;
-    color: white;
-    border-radius: 3px 0 0 3px;
-}
-.map-con{
-    height: 305px;
-}
-.map-incon{
-    height: 100%;
-}
-.data-source-row{
-    height: 200px;
-}
-.line-chart-con{
-    height: 150px;
-}
-
-@import '../assets/css/common.less';
-</style>
 <template>
     <div class="home-main">
         <Row :gutter="10">
@@ -314,3 +264,53 @@ export default {
   }
 }
 </script>
+<style lang="less">
+    .user-infor{
+        height: 135px;
+    }
+    .avator-img{
+        display: block;
+        width: 80%;
+        max-width: 100px;
+        height: auto;
+    }
+    .card-user-infor-name{
+        font-size: 2em;
+        color: #2d8cf0;
+    }
+    .card-title{
+        color: #abafbd;
+    }
+    .made-child-con-middle{
+        height: 100%;
+    }
+    .to-do-list-con{
+        height: 145px;
+        overflow: auto;
+    }
+    .to-do-item{
+        padding: 2px;
+    }
+    .infor-card-con{
+        height: 100px;
+    }
+    .infor-card-icon-con{
+        height: 100%;
+        color: white;
+        border-radius: 3px 0 0 3px;
+    }
+    .map-con{
+        height: 305px;
+    }
+    .map-incon{
+        height: 100%;
+    }
+    .data-source-row{
+        height: 200px;
+    }
+    .line-chart-con{
+        height: 150px;
+    }
+
+    @import '../assets/css/common.less';
+</style>

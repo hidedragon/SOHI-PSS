@@ -9,9 +9,9 @@ import { Message } from 'iview'
 const env = process.env.NODE_ENV || 'development'
 
 let baseUrl = {
-  development: 'http://127.0.0.1:3000',
-  test: 'https://crmfront.tiaoweilian.com',
-  production: 'https://crm.youjiangliao.com'
+    development: 'http://127.0.0.1:8808',
+    test: 'http://127.0.0.1:8808',
+    production: 'http://www.dashuntech.com:8808'
 }
 
 let options = {

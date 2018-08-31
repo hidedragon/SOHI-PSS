@@ -99,11 +99,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_koa_logger__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_koa_logger___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_koa_logger__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__routers__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__koa_cors__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__koa_cors__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__koa_cors___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__koa_cors__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_koa_static__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_koa_static__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_koa_static___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_koa_static__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_path__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_path__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_path___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_path__);
 
 
@@ -320,10 +320,10 @@ module.exports = require("koa-logger");
 
 var router = new __WEBPACK_IMPORTED_MODULE_0_koa_router___default.a();
 
-router.get('/api/user', __WEBPACK_IMPORTED_MODULE_1__controller_user__["c" /* userinfo */]);
-router.post('/api/login', __WEBPACK_IMPORTED_MODULE_1__controller_user__["a" /* login */]);
-router.post('/api/logout', __WEBPACK_IMPORTED_MODULE_1__controller_user__["b" /* logout */]);
-router.get('/api/logout', __WEBPACK_IMPORTED_MODULE_1__controller_user__["b" /* logout */]);
+router.get('/api/user/getUserInfo', __WEBPACK_IMPORTED_MODULE_1__controller_user__["c" /* userinfo */]);
+router.post('/api/user/login', __WEBPACK_IMPORTED_MODULE_1__controller_user__["a" /* login */]);
+router.post('/api/user/logout', __WEBPACK_IMPORTED_MODULE_1__controller_user__["b" /* logout */]);
+router.get('/api/user/logout', __WEBPACK_IMPORTED_MODULE_1__controller_user__["b" /* logout */]);
 
 /* harmony default export */ __webpack_exports__["a"] = (router);
 
@@ -337,26 +337,15 @@ router.get('/api/logout', __WEBPACK_IMPORTED_MODULE_1__controller_user__["b" /* 
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return logout; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_mac_codes_git_SOHI_PSS_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_mac_codes_git_SOHI_PSS_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Users_mac_codes_git_SOHI_PSS_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios_mock_adapter__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios_mock_adapter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_axios_mock_adapter__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config__ = __webpack_require__(12);
 
 
 var _this = this;
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
+// import axios from 'axios'
 
-
-
-
-var mock = new __WEBPACK_IMPORTED_MODULE_3_axios_mock_adapter___default.a(__WEBPACK_IMPORTED_MODULE_1_axios___default.a);
-mock.onPost(__WEBPACK_IMPORTED_MODULE_2__config__["a" /* default */].base_url + '/api/v1.user/login').reply(function (config) {
-  // console.log(JSON.parse(config.data).mobile)
-  return [200, { 'ret': 200, 'msg': '请求成功', 'data': { 'code': 0, 'message': '登录成功', 'token': 'PhU0Sd9zwUSwOQgXnJpj7pgSwdA7YD80', 'id': 1, 'mobile': '13770267077', 'name': JSON.parse(config.data).mobile, 'sex': 1, 'status': 1, 'role_id': 1, 'depart_id': 1, 'leader_id': 0 } }];
-});
 
 var userinfo = function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_mac_codes_git_SOHI_PSS_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
@@ -387,7 +376,7 @@ var userinfo = function () {
 
 var login = function () {
   var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_mac_codes_git_SOHI_PSS_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee2(ctx, next) {
-    var _ctx$request$body, mobile, psd, _url, req, ret, msg, code, message, token, signkey, info, session;
+    var _ctx$request$body, mobile, psd, token, signkey, info, session;
 
     return __WEBPACK_IMPORTED_MODULE_0__Users_mac_codes_git_SOHI_PSS_node_modules_babel_runtime_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
       while (1) {
@@ -408,74 +397,18 @@ var login = function () {
 
           case 3:
 
-            // 发起请求
-            _url = __WEBPACK_IMPORTED_MODULE_2__config__["a" /* default */].base_url + '/api/v1.user/login';
-            _context2.next = 6;
-            return __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post(_url, {
-              mobile: mobile,
-              psd: psd,
-              sign: ''
-            });
-
-          case 6:
-            req = _context2.sent;
-
-            if (!(req.status !== 200)) {
-              _context2.next = 9;
-              break;
-            }
-
-            return _context2.abrupt('return', ctx.body = {
-              ret: 400,
-              msg: '网络通讯异常',
-              data: {}
-            });
-
-          case 9:
-            if (!(req.data.ret !== 200)) {
-              _context2.next = 13;
-              break;
-            }
-
-            ret = req.data.ret || 400;
-            msg = req.data.msg || '失败';
-            return _context2.abrupt('return', ctx.body = {
-              ret: ret,
-              msg: msg,
-              data: {}
-            });
-
-          case 13:
-            if (!(req.data.data.code !== 0)) {
-              _context2.next = 17;
-              break;
-            }
-
-            code = req.data.data.code || -1;
-            message = req.data.data.message || '登录失败';
-            return _context2.abrupt('return', ctx.body = {
-              ret: 200,
-              msg: '请求成功',
-              data: {
-                code: code,
-                message: message
-              }
-            });
-
-          case 17:
-
             // 登陆成功
-            token = req.data.data.token;
-            signkey = __WEBPACK_IMPORTED_MODULE_2__config__["a" /* default */].sign_key;
+            token = "token001";
+            signkey = __WEBPACK_IMPORTED_MODULE_1__config__["a" /* default */].sign_key;
             info = {
-              id: req.data.data.id,
-              mobile: req.data.data.mobile,
-              name: req.data.data.name,
-              sex: req.data.data.sex,
-              status: req.data.data.status,
-              role_id: req.data.data.role_id,
-              depart_id: req.data.data.depart_id,
-              deader_id: req.data.data.deader_id
+              id: "admin",
+              mobile: "18910806782",
+              name: "zhangsan",
+              sex: "男",
+              status: "",
+              role_id: "admin",
+              depart_id: "ss",
+              deader_id: "dd"
             };
             session = ctx.session;
 
@@ -497,7 +430,7 @@ var login = function () {
               }
             });
 
-          case 24:
+          case 10:
           case 'end':
             return _context2.stop();
         }
@@ -555,42 +488,30 @@ var logout = function () {
 
 /***/ }),
 /* 12 */
-/***/ (function(module, exports) {
-
-module.exports = require("axios");
-
-/***/ }),
-/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var config = {
-  base_url: 'https://crmback.tiaoweilian.com',
+  base_url: 'http://www.dashuntech.com',
   sign_key: 'RFHIJUGVCFTRQKJMJKNHGBIOJUHGBNFG'
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (config);
 
 /***/ }),
-/* 14 */
-/***/ (function(module, exports) {
-
-module.exports = require("axios-mock-adapter");
-
-/***/ }),
-/* 15 */
+/* 13 */
 /***/ (function(module, exports) {
 
 module.exports = require("@koa/cors");
 
 /***/ }),
-/* 16 */
+/* 14 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-static");
 
 /***/ }),
-/* 17 */
+/* 15 */
 /***/ (function(module, exports) {
 
 module.exports = require("path");

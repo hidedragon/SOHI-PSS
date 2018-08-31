@@ -7,7 +7,7 @@
         </div>
         <Form inline ref="loginFormRef" :model="formData" :rules="rule">
           <FormItem prop="user" class="form-item">
-            <Input type="text" icon="person" v-model="formData.user" @on-enter="loginSubmit" placeholder="登录账号"></Input>
+            <Input type="text" icon="person" v-model="formData.account" @on-enter="loginSubmit" placeholder="登录账号"></Input>
           </FormItem>
           <FormItem prop="password" class="form-item">
             <Input type="password" icon="ios-locked" v-model="formData.password" @on-enter="loginSubmit" placeholder="账户密码"></Input>
@@ -42,7 +42,7 @@ export default {
         password: ''
       },
       rule: {
-        user: [
+        account: [
           { required: true, message: '请填写登录账户', trigger: 'blur' },
           {
             type: 'string',
@@ -76,9 +76,9 @@ export default {
             closable: true
           })
         } else {
-          let _mobile = this.formData.user
+          let _mobile = this.formData.account
           let _psd = md5(this.formData.password)
-          let req = await axios.post('/api/login', {
+          let req = await axios.post('/api/user/login', {
             mobile: _mobile,
             psd: _psd
           })
@@ -120,7 +120,7 @@ export default {
           setTimeout(() => {
             this.loading = false
             this.$router.push(route)
-          }, 1500)
+          }, 500)
         }
       })
     }

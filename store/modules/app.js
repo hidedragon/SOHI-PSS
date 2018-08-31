@@ -1,4 +1,4 @@
-import { otherRouter, appRouter } from '@/router/router'
+import { otherRouter, mainRouter, appRouter } from '@/router/router'
 import Util from '@/libs/util'
 import Cookies from 'js-cookie'
 import Vue from 'vue'

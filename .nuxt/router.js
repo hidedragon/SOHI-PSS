@@ -4,15 +4,21 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const _18025b4d = () => import('../pages/login.vue' /* webpackChunkName: "pages/login" */).then(m => m.default || m)
-const _145cb828 = () => import('../pages/error-page/403.vue' /* webpackChunkName: "pages/error-page/403" */).then(m => m.default || m)
-const _39a2fe1a = () => import('../pages/tables/editable-table.vue' /* webpackChunkName: "pages/tables/editable-table" */).then(m => m.default || m)
-const _ce91b4aa = () => import('../pages/form/work-flow.vue' /* webpackChunkName: "pages/form/work-flow" */).then(m => m.default || m)
+const _04fff2d0 = () => import('../pages/front/index.vue' /* webpackChunkName: "pages/front/index" */).then(m => m.default || m)
+const _6956c4fc = () => import('../pages/planning-manage/planning-archived.vue' /* webpackChunkName: "pages/planning-manage/planning-archived" */).then(m => m.default || m)
 const _46a7768e = () => import('../pages/form/article-publish.vue' /* webpackChunkName: "pages/form/article-publish" */).then(m => m.default || m)
+const _39a2fe1a = () => import('../pages/tables/editable-table.vue' /* webpackChunkName: "pages/tables/editable-table" */).then(m => m.default || m)
+const _ad653972 = () => import('../pages/planning-manage/requirement-commit.vue' /* webpackChunkName: "pages/planning-manage/requirement-commit" */).then(m => m.default || m)
+const _ce91b4aa = () => import('../pages/form/work-flow.vue' /* webpackChunkName: "pages/form/work-flow" */).then(m => m.default || m)
+const _145cb828 = () => import('../pages/error-page/403.vue' /* webpackChunkName: "pages/error-page/403" */).then(m => m.default || m)
+const _64c56249 = () => import('../pages/form/preview.vue' /* webpackChunkName: "pages/form/preview" */).then(m => m.default || m)
+const _82f5ac5a = () => import('../pages/error-page/error-page.vue' /* webpackChunkName: "pages/error-page/error-page" */).then(m => m.default || m)
 const _4918ace6 = () => import('../pages/error-page/500.vue' /* webpackChunkName: "pages/error-page/500" */).then(m => m.default || m)
 const _299922c6 = () => import('../pages/tables/dragable-table.vue' /* webpackChunkName: "pages/tables/dragable-table" */).then(m => m.default || m)
+const _620333a3 = () => import('../pages/planning-manage/planning-approve.vue' /* webpackChunkName: "pages/planning-manage/planning-approve" */).then(m => m.default || m)
+const _5291f958 = () => import('../pages/planning-manage/planning-design.vue' /* webpackChunkName: "pages/planning-manage/planning-design" */).then(m => m.default || m)
 const _146acfa9 = () => import('../pages/error-page/404.vue' /* webpackChunkName: "pages/error-page/404" */).then(m => m.default || m)
-const _82f5ac5a = () => import('../pages/error-page/error-page.vue' /* webpackChunkName: "pages/error-page/error-page" */).then(m => m.default || m)
-const _64c56249 = () => import('../pages/form/preview.vue' /* webpackChunkName: "pages/form/preview" */).then(m => m.default || m)
+const _0ad25db0 = () => import('../pages/front/components/mapChart/mapChart.vue' /* webpackChunkName: "pages/front/components/mapChart/mapChart" */).then(m => m.default || m)
 const _4e5ab836 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
 
@@ -79,9 +85,19 @@ export function createRouter () {
 			name: "login"
 		},
 		{
-			path: "/error-page/403",
-			component: _145cb828,
-			name: "error-page-403"
+			path: "/front",
+			component: _04fff2d0,
+			name: "front"
+		},
+		{
+			path: "/planning-manage/planning-archived",
+			component: _6956c4fc,
+			name: "planning-manage-planning-archived"
+		},
+		{
+			path: "/form/article-publish",
+			component: _46a7768e,
+			name: "form-article-publish"
 		},
 		{
 			path: "/tables/editable-table",
@@ -89,14 +105,29 @@ export function createRouter () {
 			name: "tables-editable-table"
 		},
 		{
+			path: "/planning-manage/requirement-commit",
+			component: _ad653972,
+			name: "planning-manage-requirement-commit"
+		},
+		{
 			path: "/form/work-flow",
 			component: _ce91b4aa,
 			name: "form-work-flow"
 		},
 		{
-			path: "/form/article-publish",
-			component: _46a7768e,
-			name: "form-article-publish"
+			path: "/error-page/403",
+			component: _145cb828,
+			name: "error-page-403"
+		},
+		{
+			path: "/form/preview",
+			component: _64c56249,
+			name: "form-preview"
+		},
+		{
+			path: "/error-page/error-page",
+			component: _82f5ac5a,
+			name: "error-page-error-page"
 		},
 		{
 			path: "/error-page/500",
@@ -109,19 +140,24 @@ export function createRouter () {
 			name: "tables-dragable-table"
 		},
 		{
+			path: "/planning-manage/planning-approve",
+			component: _620333a3,
+			name: "planning-manage-planning-approve"
+		},
+		{
+			path: "/planning-manage/planning-design",
+			component: _5291f958,
+			name: "planning-manage-planning-design"
+		},
+		{
 			path: "/error-page/404",
 			component: _146acfa9,
 			name: "error-page-404"
 		},
 		{
-			path: "/error-page/error-page",
-			component: _82f5ac5a,
-			name: "error-page-error-page"
-		},
-		{
-			path: "/form/preview",
-			component: _64c56249,
-			name: "form-preview"
+			path: "/front/components/mapChart/mapChart",
+			component: _0ad25db0,
+			name: "front-components-mapChart-mapChart"
 		},
 		{
 			path: "/",

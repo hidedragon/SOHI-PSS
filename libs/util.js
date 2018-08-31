@@ -58,14 +58,14 @@ util.setCurrentPath = function(vm, name) {
   let title = ''
   let isOtherRouter = false
   vm.$store.state.app.routers.forEach(item => {
-    if (item.children.length === 1) {
+    if (item.children && item.children.length === 1) {
       if (item.children[0].name === name) {
         title = util.handleTitle(vm, item)
         if (item.name === 'otherRouter') {
           isOtherRouter = true
         }
       }
-    } else {
+    } else if (item.children) {
       item.children.forEach(child => {
         if (child.name === name) {
           title = util.handleTitle(vm, child)
@@ -109,7 +109,7 @@ util.setCurrentPath = function(vm, name) {
     ]
   } else {
     let currentPathObj = vm.$store.state.app.routers.filter(item => {
-      if (item.children.length <= 1) {
+      if (item.children && item.children.length <= 1) {
         // console.log('item.children[0].name', name)
         return item.children[0].name === name
       } else {
@@ -126,7 +126,7 @@ util.setCurrentPath = function(vm, name) {
       }
     })[0]
 
-    if (currentPathObj.name === 'home' && currentPathObj.children.length <= 1) {
+    if (currentPathObj.name === 'home' && currentPathObj.children && currentPathObj.children.length <= 1) {
       currentPathArr = [
         {
           title: '首页',
@@ -135,6 +135,7 @@ util.setCurrentPath = function(vm, name) {
         }
       ]
     } else if (
+        currentPathObj.children &&
       currentPathObj.children.length <= 1 &&
       currentPathObj.name !== 'home'
     ) {
